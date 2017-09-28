@@ -8,6 +8,7 @@ class WForeach:
 	def eval(self, fn): # параметром метода идет функтор, несущий в себе полезную нагрузку
 		self.excel = win32com.client.Dispatch("Excel.Application")
 		for file in self.files:
+			print("\nработаем над файлом ", file)
 			self.wb = self.excel.Workbooks.Open(self.pathDir + '/' + file)
 			self.sheets = self.wb.WorkSheets
 			for sh in self.sheets:
